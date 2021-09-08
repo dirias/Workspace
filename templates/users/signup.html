@@ -1,0 +1,16 @@
+{% extends 'users/base.html' %}
+{% block head_content %}
+    <title>Regirstarse</title>
+{% endblock head_content %}
+
+{% block container %}
+
+    <form action="{% url 'users:signup' %}" method="post">
+    {% csrf_token %} <!--Siempre que se crea un formulario hay que crear el csrf-->
+
+    {{ form.as_p}}
+
+    <button class="btn btn-primary btn-block mt-5" type="submit">Registrarse!</button>
+
+    </form>
+{% endblock container %}
